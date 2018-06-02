@@ -1,0 +1,35 @@
+version: "0.1"
+services:
+
+  app:
+    build: ./application
+    command: python app.py
+    ports :
+      - "7777:7777"
+    volumes:
+      - ./application:/code
+    restart: always
+
+  database:
+    image: mysql:5.7
+    volumes:
+      - ./database:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: vulcan
+      MYSQL_DATABASE: secretariat
+      MYSQL_USER: falcon
+      MYSQL_PASSWORD: vulture
+    links:
+      - app
+
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: database
+      PMA_PORT: 3306
+    ports:
+      - "80:80"
+    restart: always
+    links:
+      - database
