@@ -5,7 +5,7 @@ services:
     build: ./application
     command: python app.py
     ports :
-      - "5000:80"
+      - "80:80"
     volumes:
       - ./application:/code
     restart: always
@@ -21,7 +21,7 @@ services:
       MYSQL_USER: falcon
       MYSQL_PASSWORD: vulture
     ports:
-      - "6603:3306"
+      - "3306:3306"
     links:
       - app
 

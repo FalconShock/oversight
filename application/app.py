@@ -17,7 +17,7 @@ app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'vulcan'
 app.config['MYSQL_DATABASE_DB'] = 'secretariat'
 app.config['MYSQL_DATABASE_HOST'] = '172.17.0.4'
-app.config['MYSQL_DATABASE_PORT'] = 6603
+app.config['MYSQL_DATABASE_PORT'] = 3306
 mysql.init_app(app)
 
 @app.route('/')
@@ -102,5 +102,5 @@ def logout():
 	"""
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
+    port = int(os.environ.get('PORT', 80))
     app.run(debug = True, host='0.0.0.0', port=port)
