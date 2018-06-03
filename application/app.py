@@ -17,7 +17,7 @@ app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'vulcan'
 app.config['MYSQL_DATABASE_DB'] = 'secretariat'
 app.config['MYSQL_DATABASE_HOST'] = '172.17.0.4'
-app.config['MYSQL_DATABASE_PORT'] = 3306
+app.config['MYSQL_DATABASE_PORT'] = 6603
 mysql.init_app(app)
 
 @app.route('/')

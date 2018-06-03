@@ -21,7 +21,7 @@ services:
       MYSQL_USER: falcon
       MYSQL_PASSWORD: vulture
     ports:
-      - "3306:3306"
+      - "6603:3306"
     links:
       - app
 
