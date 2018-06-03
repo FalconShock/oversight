@@ -9,7 +9,7 @@ RUN pip install -r /tmp/requirements.txt
 ADD . /code
 WORKDIR /code
 
-EXPOSE 7777
-EXPOSE 5000
-    
+EXPOSE 80:80
+EXPOSE 3306:3306
+
 CMD ["python", "app.py"]

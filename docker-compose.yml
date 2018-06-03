@@ -5,7 +5,7 @@ services:
     build: ./application
     command: python app.py
     ports :
-      - "7777:7777"
+      - "80:80"
     volumes:
       - ./application:/code
     restart: always
@@ -20,6 +20,8 @@ services:
       MYSQL_DATABASE: secretariat
       MYSQL_USER: falcon
       MYSQL_PASSWORD: vulture
+    ports:
+      - "3306:3306"
     links:
       - app
 
@@ -29,7 +31,7 @@ services:
       PMA_HOST: database
       PMA_PORT: 3306
     ports:
-      - "80:80"
+      - "8000:80"
     restart: always
     links:
       - database
