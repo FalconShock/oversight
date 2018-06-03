@@ -57,7 +57,7 @@ def verify():
 @app.route('/dashboard')
 def index():
 
-    if g.user: return render_template('index.html', name = g.name, occ =g.occupation)
+    if g.user: return render_template('index.html', name = g.name, occ = g.occupation)
     return redirect(url_for('login'))
 
 @app.route('/projects', methods = ['POST','GET'])
@@ -85,9 +85,10 @@ def projects():
     	else:
     		data = ["None"]
     		data_columns = ["None"]
-    	#conn.close()
+    	    #conn.close()
 
     	return render_template('projects.html', data = data, col = data_columns)
+
     else: redirect(url_for('login'))
 
 @app.route('/logout')
